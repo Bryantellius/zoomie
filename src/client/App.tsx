@@ -1,12 +1,20 @@
 import * as React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./views/Home";
+import Room from "./views/Room";
 
 const App: React.FC = () => {
   return (
-    <main>
-      <h1>Hello World!!!</h1>
-      <h2>Hello World!!</h2>
-      <h3>Hello World!</h3>
-    </main>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/join/:hash">
+          <Room />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
